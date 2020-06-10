@@ -12,6 +12,10 @@ using namespace std;
 list <string> lst;
 int main(int argc, char **argv)
 {
+  if (argc < 2){
+    cout << "Please provide a file name" << endl;
+    return 0;
+  }
   ifstream file(argv[1]);
 
   // Read data
