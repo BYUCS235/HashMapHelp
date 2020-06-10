@@ -49,10 +49,10 @@ int main(int argc, char **argv)
   for (int i = 0; i < 1000; i++) {
     int ind = rand() % wordmap[state].size();
     //cout << "index "<<ind;
-    cout << wordmap[state][ind] << " ";
+    //cout << wordmap[state][ind] << " ";
     state = wordmap[state][ind];
   }
-  cout << endl;
+  //cout << endl;
   newtime = clock();
   seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
   cout << "Vector Map took "<<seconds<<endl;
@@ -72,10 +72,10 @@ int main(int argc, char **argv)
   for (int i = 0; i < 1000; i++) {
     int ind = rand() % hashwordmap[state].size();
     //cout << "index "<<ind;
-    cout << hashwordmap[state][ind] << " ";
+    //cout << hashwordmap[state][ind] << " ";
     state = hashwordmap[state][ind];
   }
-  cout << endl;
+  //cout << endl;
   newtime = clock();
   seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
   cout << "Hash Map took "<<seconds<<endl;
