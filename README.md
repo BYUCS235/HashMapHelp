@@ -2,6 +2,8 @@
 I hope that this learning activity provides a capstone for the whole class.  You will be building a hashmap for the linguistic problem you solved in Lab #3.  You should be able to see the real differences that occur when you pick the correct data structure.  I also hope that this tutorial will help you with the hashmap lab (hint hint, most of the coding is done for you in this lab).
 
 First, lets instrument the main function so that it will time the hashmap version and the vectormap version of the lab.  We will use this code to compare the time it takes to put strings into a map built from a vector vs one built from a hash.
+
+hashmap.cpp
 ```c++
 ...
 #include <ctime>
@@ -18,6 +20,8 @@ First, lets instrument the main function so that it will time the hashmap versio
 ```
 And lets integrate this into the working 
 [driver function](https://github.com/BYUCS235/HashMapHelp/blob/master/hashmap.cpp).  First we will read the strings from 1Nephi into a list.
+
+hashmap.cpp
 ```c++
 // Read data
   while (!file.eof()) {
@@ -33,6 +37,8 @@ And lets integrate this into the working
   }
 ```
 Then we will push the data from the list into a map that we have created.  When we look up 'state' in the VectorMap, it will look through the vector one entry at a time until it finds the entry matching 'state'.  Then it returns a reference to a list at that position and we push the string from the list corresponding to 'state'.
+
+hashmap.cpp
 ```c++
 VectorMap<string, vector<string>> wordmap;
   string state = "";
@@ -46,6 +52,8 @@ VectorMap<string, vector<string>> wordmap;
 Now, lets take the code we discussed for 
 [operator overloading](https://github.com/BYUCS235/OperatorOverloading/blob/master/map.cpp)
 and add the hash function into HashMap.h.  It turns out that when you say 'mymap["key"].push_back(value)', you are actually calling a function named "[]" passing it the parameter "key".  We will then use the "at" function to look up that key in the underlying data structure and return a reference to the list.  We will do this for both a vector and a hash into a vector.
+
+HashMap.h
 ```c++
 	Value &operator[](Name opname) {
 		return at(opname);
