@@ -4,10 +4,9 @@ using namespace std;
 
 const int CONSIZE=10;
 int hashme(string param, int tablesize) {
-    unsigned char *ptr = (unsigned char *)param.c_str();
     int sum = 0;
     for(int i = 0; i < param.size(); i++) {
-        sum += ptr[i];
+        sum += param[i];
     }
     int hashval = sum%tablesize;
     //cout << "Size = "<<sizeof(param)<<" Sum = "<<sum<<" hash "<<hashval<<endl;
